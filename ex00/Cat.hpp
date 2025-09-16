@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:43:38 by root              #+#    #+#             */
-/*   Updated: 2025/07/31 22:00:39 by root             ###   ########.fr       */
+/*   Updated: 2025/09/16 19:55:15 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ class Cat : public Animal
 	public:
 		Cat();
 		~Cat();
+		Cat(Cat &other);
+		Cat &operator=(Cat &other);
+		void makeSound() const;
 };
 
 

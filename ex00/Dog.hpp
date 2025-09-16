@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:41:18 by root              #+#    #+#             */
-/*   Updated: 2025/07/31 22:00:37 by root             ###   ########.fr       */
+/*   Updated: 2025/09/16 19:56:30 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ class Dog : public Animal
 	public:
 		Dog();
 		~Dog();
+		Dog(Dog &other);
+		Dog &operator=(Dog &other);
+		void makeSound() const;
 };
 
 #endif
