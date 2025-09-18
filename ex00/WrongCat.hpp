@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 21:56:40 by root              #+#    #+#             */
-/*   Updated: 2025/09/18 16:43:12 by maissat          ###   ########.fr       */
+/*   Created: 2025/09/18 16:52:35 by maissat           #+#    #+#             */
+/*   Updated: 2025/09/18 16:52:54 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
+
+#include "WrongAnimal.hpp"
 
 
-Animal::Animal(void)
+class WrongCat : public WrongAnimal
 {
-	this->type = "unknown";
-}
+	public:
+		WrongCat();
+		~WrongCat();
+		WrongCat(WrongCat &other);
+		WrongCat &operator=(WrongCat &other);
+		void makeSound() const;
+};
 
-Animal::~Animal(void)
-{
-}
 
-Animal::Animal(Animal &other)
-{
-	*this = other;
-}
 
-Animal &Animal::operator=(Animal &other)
-{
-	this->type = other.type;
-	return (*this);
-}
 
-std::string Animal::getType() const
-{
-	return (this->type);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "Unknown sound...\n";
-}	
+#endif

@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 21:56:40 by root              #+#    #+#             */
-/*   Updated: 2025/09/18 16:43:12 by maissat          ###   ########.fr       */
+/*   Created: 2025/09/18 16:53:09 by maissat           #+#    #+#             */
+/*   Updated: 2025/09/18 16:57:42 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-
-Animal::Animal(void)
+WrongCat::WrongCat(void)
 {
-	this->type = "unknown";
+	this->_type = "WrongCat";
 }
 
-Animal::~Animal(void)
+WrongCat::~WrongCat()
 {
 }
 
-Animal::Animal(Animal &other)
+WrongCat::WrongCat(WrongCat &other)
 {
 	*this = other;
 }
 
-Animal &Animal::operator=(Animal &other)
+WrongCat &WrongCat::operator=(WrongCat &other)
 {
-	this->type = other.type;
+	this->_type = other._type;
 	return (*this);
 }
 
-std::string Animal::getType() const
+void WrongCat::makeSound() const
 {
-	return (this->type);
+	std::cout << " Wrong Meawwwwww\n";
 }
-
-void Animal::makeSound() const
-{
-	std::cout << "Unknown sound...\n";
-}	
