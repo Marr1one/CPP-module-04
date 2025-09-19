@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:46:44 by root              #+#    #+#             */
-/*   Updated: 2025/08/01 17:46:03 by root             ###   ########.fr       */
+/*   Updated: 2025/09/19 17:02:26 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Dog::Dog(void)
 {
 	std::cout << "Dog constructor called\n";
-	_brain = new Brain();
 	this->type = "Dog";
 }
 
@@ -23,5 +22,21 @@ Dog::Dog(void)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called\n";
-	delete _brain;
+}
+
+Dog::Dog(Dog &other)
+{
+	*this = other;
+}
+
+Dog &Dog::operator=(Dog &other)
+{
+	this->type = other.type;
+	return (*this);
+}
+
+
+void Dog::makeSound() const
+{
+	std::cout << "WOUF WOUF WOUF\n";
 }

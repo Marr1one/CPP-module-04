@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:56:40 by root              #+#    #+#             */
-/*   Updated: 2025/08/01 16:49:47 by root             ###   ########.fr       */
+/*   Updated: 2025/09/19 17:03:23 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,23 @@
 Animal::Animal(void)
 {
 	std::cout << "Animal constructor called\n";
+	this->type = "unknown";
 }
 
 Animal::~Animal(void)
 {
 	std::cout << "Animal destructor called\n";
+}
+
+Animal::Animal(Animal &other)
+{
+	*this = other;
+}
+
+Animal &Animal::operator=(Animal &other)
+{
+	this->type = other.type;
+	return (*this);
 }
 
 std::string Animal::getType() const
@@ -30,8 +42,5 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
-	if (this->type == "Dog")
-		std::cout << "WAFF WAFF\n";
-	else if (this->type == "Cat")
-		std::cout << "MIAW MIAW\n";
+	std::cout << "Unknown sound...\n";
 }	

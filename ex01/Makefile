@@ -1,24 +1,12 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/01 16:31:48 by root              #+#    #+#              #
-#    Updated: 2025/08/01 17:43:16 by root             ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = animal
+NAME = ex01
 
 SRC = Cat.cpp Dog.cpp Animal.cpp main.cpp Brain.cpp
 
-CFLAGS =  -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
 OBJ = $(SRC:.cpp=.o)
 
-%.o: %.cpp
+%o : %.cpp
 	c++ $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
@@ -32,5 +20,5 @@ fclean : clean
 	rm -f $(NAME)
 re : fclean $(NAME)
 
-.PHONY : 
+.Phony : 
 	re clean all fclean
