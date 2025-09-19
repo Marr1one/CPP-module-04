@@ -6,12 +6,12 @@
 /*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:34:51 by root              #+#    #+#             */
-/*   Updated: 2025/09/18 17:13:40 by maissat          ###   ########.fr       */
+/*   Updated: 2025/09/19 17:48:06 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ class Animal
 		Animal();
 		Animal(Animal &other);
 		Animal &operator=(Animal &other);
-		~Animal();
+		virtual ~Animal(); //Pour appeler les destructeurs enfants egalements !
 		std::string getType() const;
 		virtual void makeSound() const;
 };

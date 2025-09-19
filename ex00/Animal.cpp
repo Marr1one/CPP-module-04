@@ -6,7 +6,7 @@
 /*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:56:40 by root              #+#    #+#             */
-/*   Updated: 2025/09/18 16:43:12 by maissat          ###   ########.fr       */
+/*   Updated: 2025/09/19 17:03:23 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 Animal::Animal(void)
 {
+	std::cout << "Animal constructor called\n";
 	this->type = "unknown";
 }
 
 Animal::~Animal(void)
 {
+	std::cout << "Animal destructor called\n";
 }
 
 Animal::Animal(Animal &other)
