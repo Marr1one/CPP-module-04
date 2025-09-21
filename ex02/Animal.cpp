@@ -3,24 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:56:40 by root              #+#    #+#             */
-/*   Updated: 2025/08/02 17:19:20 by root             ###   ########.fr       */
+/*   Updated: 2025/09/21 17:31:44 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-
 Animal::Animal(void)
 {
 	std::cout << "Animal constructor called\n";
+	this->type = "unknown";
 }
 
 Animal::~Animal(void)
 {
 	std::cout << "Animal destructor called\n";
+}
+
+Animal::Animal(Animal &other)
+{
+	*this = other;
+}
+
+Animal &Animal::operator=(Animal &other)
+{
+	this->type = other.type;
+	return (*this);
 }
 
 std::string Animal::getType() const
@@ -30,5 +41,6 @@ std::string Animal::getType() const
 
 void Animal::makeSound() const
 {
+	std::cout << "Unknown sound...\n";
 }	
 

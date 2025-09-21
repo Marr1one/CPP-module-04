@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:34:51 by root              #+#    #+#             */
-/*   Updated: 2025/08/02 17:23:53 by root             ###   ########.fr       */
+/*   Updated: 2025/09/21 17:31:23 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ class Animal
 		std::string type;
 	public:
 		Animal();
-		virtual ~Animal();
+		Animal(Animal &other);
+		Animal &operator=(Animal &other);
+		virtual ~Animal(); //Pour appeler les destructeurs enfants egalements !
 		std::string getType() const;
-		virtual void makeSound() const = 0;
+		virtual void makeSound() const = 0; //passe la fonction en virtuel pure ! necessaire pour que la classe devienne abstraite.
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maissat <maissat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 21:54:34 by root              #+#    #+#             */
-/*   Updated: 2025/08/02 17:25:07 by root             ###   ########.fr       */
+/*   Updated: 2025/09/21 17:32:08 by maissat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int main()
 {
-	Dog Dog;
-	Dog.makeSound();
+	Cat cat;
+	Dog dog;
+	//Animal test;
+	
 	return 0;
 }
